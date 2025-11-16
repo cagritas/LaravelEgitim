@@ -6,6 +6,8 @@ use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ModelOperationsController;
 use App\Http\Controllers\WebPageController;
+use App\Http\Controllers\ContactRequestController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +53,7 @@ Route::get('/model-list', [ModelOperationsController::class, 'listEntries']);
 Route::get('/model-add', [ModelOperationsController::class, 'add']);
 Route::get('/model-update', [ModelOperationsController::class, 'updateRecord']);
 Route::get('/model-delete', [ModelOperationsController::class, 'delete']);
+
+// Contact request form endpoints.
+Route::get('/contact', [ContactRequestController::class, 'index'])->name('contact.form');
+Route::post('/contact', [ContactRequestController::class, 'store'])->name('contact.submit');

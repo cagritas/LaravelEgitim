@@ -59,6 +59,7 @@ Route::get('/model-delete', [ModelOperationsController::class, 'delete']);
 Route::get('/contact', [ContactRequestController::class, 'index'])->name('contact.form');
 Route::post('/contact', [ContactRequestController::class, 'store'])->name('contact.submit');
 
+// Image upload routes.
 Route::get('/upload', [UploadImage::class, 'showForm'])->name('upload.page');
 Route::post('/upload', [UploadImage::class, 'upload'])->name('upload.form');
 Route::get('/images', [UploadImage::class, 'ListImages'])->name('list.images');

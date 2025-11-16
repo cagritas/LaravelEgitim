@@ -18,6 +18,85 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+
+            .hub-title {
+                font-size: 1.75rem;
+                font-weight: 700;
+            }
+
+            .hub-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .hub-card {
+                border: 1px solid #e2e8f0;
+                border-radius: 0.75rem;
+                padding: 1.5rem;
+                background-color: rgba(249, 250, 251, 0.7);
+            }
+
+            @media (prefers-color-scheme: dark) {
+                .hub-card {
+                    border-color: #4a5568;
+                    background-color: rgba(26, 32, 44, 0.7);
+                }
+            }
+
+            .hub-card-title {
+                font-size: 1.125rem;
+                font-weight: 600;
+            }
+
+            .hub-card-text {
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            .hub-actions {
+                margin-top: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .hub-link {
+                display: inline-block;
+                padding: 0.45rem 0.95rem;
+                border-radius: 9999px;
+                border: 1px solid #e2e8f0;
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: #1a202c;
+                background-color: #fff;
+                transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            }
+
+            .hub-link:hover {
+                background-color: #1a202c;
+                color: #fff;
+                border-color: #1a202c;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                .hub-link {
+                    border-color: #4a5568;
+                    color: #f7fafc;
+                    background-color: transparent;
+                }
+
+                .hub-link:hover {
+                    background-color: #f7fafc;
+                    color: #1a202c;
+                }
+            }
+
+            .hub-note {
+                line-height: 1.6;
+            }
         </style>
     </head>
     <body class="antialiased">
@@ -46,62 +125,87 @@
                 </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
+                    <div class="p-6">
+                        <div class="hub-title text-gray-900 dark:text-white">Laravel Training Playground</div>
+                        <div class="mt-2 text-gray-600 dark:text-gray-400 leading-7">
+                            All sample pages and operations we have built for this project live on this screen. With the links below, anyone landing here can reach every use case in seconds.
+                        </div>
+                        <div class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                            Each button points to the relevant controller action; to try the POST flows, fill out the form on that page and submit it.
+                        </div>
+                    </div>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+                    <div class="border-t border-gray-200 dark:border-gray-700">
+                        <div class="hub-grid">
+                            <div class="hub-card">
+                                <div class="hub-card-title text-gray-900 dark:text-white">UI & Demo Flows</div>
+                                <p class="hub-card-text text-gray-600 dark:text-gray-400">
+                                    Highlights our static landing page plus the parameterized test route to showcase routing fundamentals.
+                                </p>
+                                <div class="hub-actions">
+                                    <a class="hub-link" href="{{ route('home') }}">Web Landing</a>
+                                    <a class="hub-link" href="{{ url('/test/Egitim') }}">Parameterized Test</a>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                            <div class="hub-card">
+                                <div class="hub-card-title text-gray-900 dark:text-white">Forms & Middleware</div>
+                                <p class="hub-card-text text-gray-600 dark:text-gray-400">
+                                    Jump into the guarded form, contact request screen, and user registration flow from one place.
+                                </p>
+                                <div class="hub-actions">
+                                    <a class="hub-link" href="{{ route('form') }}">Guarded Form</a>
+                                    <a class="hub-link" href="{{ route('contact.form') }}">Contact Form</a>
+                                    <a class="hub-link" href="{{ route('register.page') }}">Registration Screen</a>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
+                            <div class="hub-card">
+                                <div class="hub-card-title text-gray-900 dark:text-white">Query Builder Operations</div>
+                                <p class="hub-card-text text-gray-600 dark:text-gray-400">
+                                    Ready-made routes to test insert, update, delete, and listing scenarios with manual queries.
+                                </p>
+                                <div class="hub-actions">
+                                    <a class="hub-link" href="{{ url('/add') }}">Insert</a>
+                                    <a class="hub-link" href="{{ url('/update') }}">Update</a>
+                                    <a class="hub-link" href="{{ url('/delete') }}">Delete</a>
+                                    <a class="hub-link" href="{{ url('/list') }}">List Records</a>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
+                            <div class="hub-card">
+                                <div class="hub-card-title text-gray-900 dark:text-white">Eloquent Model CRUD</div>
+                                <p class="hub-card-text text-gray-600 dark:text-gray-400">
+                                    Experience the full CRUD flow on models through ModelOperationsController helpers.
+                                </p>
+                                <div class="hub-actions">
+                                    <a class="hub-link" href="{{ url('/model-list') }}">List Models</a>
+                                    <a class="hub-link" href="{{ url('/model-add') }}">Create Model</a>
+                                    <a class="hub-link" href="{{ url('/model-update') }}">Update Model</a>
+                                    <a class="hub-link" href="{{ url('/model-delete') }}">Delete Model</a>
+                                </div>
                             </div>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
+                            <div class="hub-card">
+                                <div class="hub-card-title text-gray-900 dark:text-white">File Upload & Media</div>
+                                <p class="hub-card-text text-gray-600 dark:text-gray-400">
+                                    Access the upload form and the lightweight gallery that lists every stored image.
+                                </p>
+                                <div class="hub-actions">
+                                    <a class="hub-link" href="{{ route('upload.page') }}">Upload File</a>
+                                    <a class="hub-link" href="{{ route('list.images') }}">View Images</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
+                    <div class="border-t border-gray-200 dark:border-gray-700">
+                        <div class="p-6 hub-note text-gray-600 dark:text-gray-400 text-sm">
+                            The form, contact, registration, and upload pages rely on POST requests—use the buttons on those screens to see each response in action.
+                            Navigation links on every page (or the browser back button) will always bring you back to this welcome hub.
+                        </div>
+                    </div>
+                </div>                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                     <div class="text-center text-sm text-gray-500 sm:text-left">
                         <div class="flex items-center">
                             <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
@@ -130,3 +234,5 @@
         </div>
     </body>
 </html>
+
+
